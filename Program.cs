@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Threading;
 using System.Media;
+using GFXEngine;
+using System.Security.Cryptography;
 
 namespace FirstPlayable_LWM
 {
@@ -223,13 +225,15 @@ namespace FirstPlayable_LWM
         }
         static void PrintPlayer() // <- prints player character
         {
-            Console.SetCursorPosition(PlayerPosX, PlayerPosY);
-            Console.Write("T");
+            //Console.SetCursorPosition(PlayerPosX, PlayerPosY);
+            //Console.Write("T");
+            GFX.GridProcGFX('2', PlayerPosX, PlayerPosY);
         }
         static void PrintEnemy() // <- Prints enemy character
         {
-            Console.SetCursorPosition(EnemyPosX, EnemyPosY);
-            Console.Write("E");
+            //Console.SetCursorPosition(EnemyPosX, EnemyPosY);
+            //Console.Write("E");
+            GFX.GridProcGFX('5', EnemyPosX, EnemyPosY);
         }
         static void PrintMap() // <- prints the map to the screen
         {
@@ -237,8 +241,9 @@ namespace FirstPlayable_LWM
             {
                 for (int j = 0; j < MapAcross; j++)
                 {
-                    Console.SetCursorPosition(j, i);
-                    Console.Write(MapLegend()[i][j]);
+                    //Console.SetCursorPosition(j, i);
+                    //Console.Write(MapLegend()[i][j]);
+                    GFX.GridProcGFX(MapLegend()[i][j], j, i);
                 }
             }
         }
@@ -362,6 +367,7 @@ namespace FirstPlayable_LWM
             {
                 return 0;
             }
+            
         }
         static int CombatFunction(int atkrX, int atkrY, int dfndX, int dfndY, int atkrDmg, int dfndHp) // <- processes combat between entities
         {
