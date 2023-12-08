@@ -653,23 +653,23 @@ namespace FirstPlayable_LWM
         {
             if (PlayerPosY < EnemyPosY)
             {
-                return 1;
+                return 1; // <- up
             }
             else if (PlayerPosX < EnemyPosX)
             {
-                return 2;
+                return 2; // <- left
             }
             else if (PlayerPosY > EnemyPosY)
             {
-                return 3;
+                return 3; // <- down
             }
             else if (PlayerPosX > EnemyPosX)
             {
-                return 4;
+                return 4; // <- right
             }
             else
             {
-                return 0;
+                return 0; // <- N/A
             }
         }
         static int Enemy2AI() // <- Determines what the enemy will do 
