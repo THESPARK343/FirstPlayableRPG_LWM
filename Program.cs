@@ -649,7 +649,7 @@ namespace FirstPlayable_LWM
                     break;
             }
         }
-        static int EnemyAI() // <- Determines what the enemy will do 
+        static int EnemyAI() // <- Determines what enemy one will do 
         {
             if (PlayerPosY < EnemyPosY)
             {
@@ -672,29 +672,41 @@ namespace FirstPlayable_LWM
                 return 0; // <- N/A
             }
         }
-        static int Enemy2AI() // <- Determines what the enemy will do 
+        static int Enemy2AI() // <- Determines what enemy two will do 
         {
-            if (PlayerPosY < Enemy2PosY)
+            //if (PlayerPosY < Enemy2PosY)
+            //{
+            //    return 1;
+            //}
+            //else if (PlayerPosX < Enemy2PosX)
+            //{
+            //    return 2;
+            //}
+            //else if (PlayerPosY > Enemy2PosY)
+            //{
+            //    return 3;
+            //}
+            //else if (PlayerPosX > Enemy2PosX)
+            //{
+            //    return 4;
+            //}
+            //else
+            //{
+            //    return 0;
+            //}
+            Random RNG = new Random();
+            switch (RNG.Next(1,4))
             {
-                return 1;
+                case 1:
+                    return 1;
+                case 2:
+                    return 2;
+                case 3:
+                    return 3;
+                case 4:
+                    return 4;
             }
-            else if (PlayerPosX < Enemy2PosX)
-            {
-                return 2;
-            }
-            else if (PlayerPosY > Enemy2PosY)
-            {
-                return 3;
-            }
-            else if (PlayerPosX > Enemy2PosX)
-            {
-                return 4;
-            }
-            else
-            {
-                return 0;
-            }
-
+            return 0;
         }
         static int CombatFunction(int atkrX, int atkrY, int dfndX, int dfndY, int atkrDmg, int dfndHp, int Enemy) // <- processes combat between entities 
         {
