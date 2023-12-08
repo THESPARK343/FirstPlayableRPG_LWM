@@ -10,14 +10,14 @@ namespace GFXEngine
     {        
         static void CellCLRGFX(char CellCLR)
         {
-            if (CellCLR == '0')
+            if (CellCLR == '0') 
             {
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.Write("0");
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
-            }
+            } // <- black
             else if (CellCLR == '1')
             {
                 Console.BackgroundColor = ConsoleColor.White;
@@ -25,7 +25,7 @@ namespace GFXEngine
                 Console.Write("0");
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
-            }
+            } // <- white
             else if (CellCLR == '2')
             {
                 Console.BackgroundColor = ConsoleColor.Blue;
@@ -33,7 +33,7 @@ namespace GFXEngine
                 Console.Write("0");
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
-            }
+            } // <- blue
             else if (CellCLR == '3')
             {
                 Console.BackgroundColor = ConsoleColor.Green;
@@ -41,7 +41,7 @@ namespace GFXEngine
                 Console.Write("0");
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
-            }
+            } // <- green
             else if (CellCLR == '4')
             {
                 Console.BackgroundColor = ConsoleColor.Yellow;
@@ -49,7 +49,7 @@ namespace GFXEngine
                 Console.Write("0");
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
-            }
+            } // <- yellow
             else if (CellCLR == '5')
             {
                 Console.BackgroundColor = ConsoleColor.Red;
@@ -57,7 +57,7 @@ namespace GFXEngine
                 Console.Write("0");
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
-            }
+            } // <- red
             else if (CellCLR == '6')
             {
                 Console.BackgroundColor = ConsoleColor.Gray;
@@ -65,7 +65,7 @@ namespace GFXEngine
                 Console.Write("0");
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
-            }
+            } // <- grey
             else if (CellCLR == '7')
             {
                 Console.BackgroundColor = ConsoleColor.DarkGray;
@@ -73,7 +73,15 @@ namespace GFXEngine
                 Console.Write("0");
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
-            }
+            } // <- dark grey
+            else if (CellCLR == '8')
+            {
+                Console.BackgroundColor = ConsoleColor.DarkGreen;
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.Write("0");
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+            } // <- dark green
             else
             {
                 Console.BackgroundColor = ConsoleColor.Black;
@@ -81,12 +89,12 @@ namespace GFXEngine
                 Console.Write("0");
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
-            }
+            } // <- N/A Value; shows black
         }
         public static void GridProcGFX(char ValueGFX, int posX, int posY)
         {            
             Console.SetCursorPosition(posX, posY);
             CellCLRGFX(ValueGFX);
-        }
+        } // <- Processes incoming stream
     }
 }
